@@ -21,16 +21,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', include('blog.urls')),
+    path('', include('blog.urls')),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-'''
-Post.objects.bulk_create([
-    Post(titulo='Testando o shell do Django com bulk',slug='testando-o-shell-do-django-com-bulk-22',conteudo='Testando oo shell do Django com Bulk',autor=user),
-    Post(titulo='Testando o shell do Django com bulk 2',slug='testando-o-shell-do-django-com-bulk-222',conteudo='Testando oo shell do Django com Bulk 2',autor=user),
-    Post(titulo='Testando o shell do Django com bulk 4',slug='testando-o-shell-do-django-com-bulk-2224',conteudo='Testando oo shell do Django com Bulk 3',autor=user),
-])
-'''
